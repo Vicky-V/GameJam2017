@@ -16,7 +16,7 @@ public class HeadController : MonoBehaviour
 
     void Update()
     {
-        transform.position += new Vector3(0, Input.GetAxis("Vertical"), 0) * verticalSensitivity;
+       // transform.position += new Vector3(0, Input.GetAxis("Vertical"), 0) * verticalSensitivity;
         Hat.transform.position = Head.transform.transform.position;
     }
 

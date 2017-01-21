@@ -44,7 +44,7 @@ public class Bone : MonoBehaviour
             transform.position = new Vector3(transform.position.x, yPos, transform.position.z);
         }
         
-        if ( timePassed > speed/2)
+        if ( timePassed > speed/3)
         {
             if (transform.parent.childCount > transform.GetSiblingIndex() + 1 && transform.parent.GetChild(transform.GetSiblingIndex() + 1).GetComponent<Bone>()!=null)
                 transform.parent.GetChild(transform.GetSiblingIndex() + 1).GetComponent<Bone>().TargetWorldYPos = this.targetWorldYPos;
