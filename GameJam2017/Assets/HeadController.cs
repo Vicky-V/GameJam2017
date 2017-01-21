@@ -3,6 +3,8 @@ using System.Collections;
 
 public class HeadController : MonoBehaviour
 {
+
+    public float verticalSensitivity = 1.0f;
     public Bone rootBone;
     
     void Start()
@@ -11,7 +13,12 @@ public class HeadController : MonoBehaviour
 
     }
 
-    
+    void Update()
+    {
+        transform.position += new Vector3(0, Input.GetAxis("Vertical"), 0) * verticalSensitivity;
+
+    }
+
     IEnumerator SetBonePosition()
     {
         while(true)

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 5149ba1fae44d2348b713ac15160e12d
-timeCreated: 1485030231
+guid: 65b23aa7e43ee7a4098e942809304b19
+timeCreated: 1485033011
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -49,8 +49,8 @@ ModelImporter:
     100082: Bone.021_end
     100084: Bone.022
     100086: Bone.022_end
-    100088: //RootNode
-    100090: Hat
+    100088: Hat
+    100090: //RootNode
     100092: Hat Armature
     100094: HatBase
     100096: HatBase_end
