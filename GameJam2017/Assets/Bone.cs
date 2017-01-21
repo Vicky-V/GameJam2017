@@ -26,8 +26,11 @@ public class Bone : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
-        if (transform.GetSiblingIndex() > 0)
-            transform.LookAt(transform.parent.GetChild(transform.GetSiblingIndex() - 1));
+        //if (transform.GetSiblingIndex() > 0)
+        //{
+        //    transform.forward = transform.parent.GetChild(transform.GetSiblingIndex() - 1).position - transform.position;
+        //    transform.Rotate(-90, 0, 0);
+        //}
 
         timePassed += Time.deltaTime;
 
@@ -46,7 +49,7 @@ public class Bone : MonoBehaviour
         
         if ( timePassed > speed/2)
         {
-            if (transform.parent.childCount > transform.GetSiblingIndex() + 1)
+            if (transform.parent.childCount > transform.GetSiblingIndex() + 1 && transform.parent.GetChild(transform.GetSiblingIndex() + 1).GetComponent<Bone>()!=null)
                 transform.parent.GetChild(transform.GetSiblingIndex() + 1).GetComponent<Bone>().TargetWorldYPos = targetWorldYPos;
         }
     }
