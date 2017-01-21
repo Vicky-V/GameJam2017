@@ -3,7 +3,8 @@ using System.Collections;
 
 public class HeadController : MonoBehaviour
 {
-
+    public GameObject Hat;
+    public GameObject Head;
     public float verticalSensitivity = 1.0f;
     public Bone rootBone;
     
@@ -16,7 +17,7 @@ public class HeadController : MonoBehaviour
     void Update()
     {
         transform.position += new Vector3(0, Input.GetAxis("Vertical"), 0) * verticalSensitivity;
-
+        Hat.transform.position = Head.transform.transform.position;
     }
 
     IEnumerator SetBonePosition()
@@ -24,7 +25,7 @@ public class HeadController : MonoBehaviour
         while(true)
         {
             yield return new WaitForSeconds(0.15f);
-            rootBone.TargetWorldYPos = transform.position.y;
+            rootBone.TargetWorldYPos = Hat.transform.position.y;
 
         }
     }

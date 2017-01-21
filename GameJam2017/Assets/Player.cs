@@ -11,4 +11,9 @@ public class Player : MonoBehaviour {
         transform.position += new Vector3(Time.deltaTime* horizontalSpeed, 0, 0);
 
     }
+
+    void Jump()
+    {
+
+    }
 }

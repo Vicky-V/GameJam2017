@@ -5,7 +5,6 @@ using System.Collections.Generic;
 public class LevelGenerator : MonoBehaviour
 {
     public Transform OffScreenPositionLeft;
-    public Transform OffScreenPositionRight;
 
     public GameObject[] LevelPiecesPrefabs;
     public int poolSize = 4;
