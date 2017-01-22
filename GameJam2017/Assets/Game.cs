@@ -28,6 +28,11 @@ public class Game : MonoBehaviour
 
     bool gameStarted = false;
 
+    void Start()
+    {
+        Time.timeScale = 0;
+    }
+
     public void GameOver()
     {
         GameOverCanvas.enabled = true;

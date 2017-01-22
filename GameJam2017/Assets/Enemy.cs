@@ -20,6 +20,12 @@ public class Enemy : AIController {
 
     }
 
+    protected override void FixedUpdate()
+    {
+        if (GetComponent<Rigidbody>().velocity.sqrMagnitude < maxSpeed * maxSpeed)
+            GetComponent<Rigidbody>().AddForce(transform.forward * acceleration, ForceMode.Impulse);
+    }
+
     protected override void OnTriggerStay(Collider collider)
     {
         if (collider.tag == "Obstacle")

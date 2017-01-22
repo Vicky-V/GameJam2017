@@ -3,14 +3,15 @@ using System.Collections;
 
 public class AIController : MonoBehaviour
 {
-    public float horizontalSpeed = 5.0f;
+    public float acceleration = 5.0f;
+    public float maxSpeed = 20.0f;
     public float jumpForce = 20.0f;
 
-    bool isJumping = true;
+    protected bool isJumping = false;
 
     void Start()
     {
-        GetComponent<Rigidbody>().drag = 5;
+        GetComponent<Rigidbody>().drag = 0;
     }
    
     protected virtual void OnTriggerStay(Collider collider)
@@ -20,10 +21,10 @@ public class AIController : MonoBehaviour
 
     }
 
-    protected void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
        // if(!isJumping)
-            GetComponent<Rigidbody>().MovePosition(transform.position + transform.forward * horizontalSpeed * Time.deltaTime);
+            GetComponent<Rigidbody>().MovePosition(transform.position + transform.forward * acceleration * Time.deltaTime);
     }
 
     void OnTriggerEnter(Collider collider)

@@ -5,25 +5,24 @@ using System.Collections.Generic;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject EnemyPrefab;
-    public Transform WorldRoot;
 
-    public int EnemyAmountStart;
-    public int EnemyAmountIncrement;
+    public int EnemyAmount;
 
     List<GameObject> enemies;
 
-    void OnEnable()
+    void OnTriggerEnter(Collider collider)
     {
-        enemies = new List<GameObject>();
-
-        for (int i = 0; i < EnemyAmountStart; i++)
+        if (collider.gameObject.layer == LayerMask.NameToLayer("Wizard"))
         {
-            enemies.Add(Instantiate(EnemyPrefab, transform.position, transform.rotation) as GameObject);
+            StartCoroutine(Spawn());
         }
     }
 
     void Update()
     {
+        if (enemies == null)
+            return;
+
         List<GameObject> bufferedEnemeis = enemies;
 
         for (int i = 0; i < bufferedEnemeis.Count; i++)
@@ -39,5 +38,18 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
+    IEnumerator Spawn()
+    {
+        int startAmount = 0;
 
+        enemies = new List<GameObject>();
+
+
+        while (startAmount < EnemyAmount)
+        {
+            enemies.Add(Instantiate(EnemyPrefab, transform.position + new Vector3(Random.Range(0, 0.25f), 0, Random.Range(0, 0.25f)), transform.rotation) as GameObject);
+            startAmount++;
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
 }
