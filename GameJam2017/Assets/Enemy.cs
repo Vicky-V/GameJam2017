@@ -49,6 +49,7 @@ public class Enemy : AIController {
         if (collision.transform.gameObject.layer == LayerMask.NameToLayer("Projectile"))
         {
             Destroy(gameObject);
+            Destroy(collision.gameObject);
             Game.Instance.IncrementCreatures();
 
         }
