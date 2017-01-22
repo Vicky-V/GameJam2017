@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour {
     
     public void Shoot()
     {
-        GetComponent<Rigidbody>().AddForce(transform.forward * StartForce, ForceMode.Impulse);
+        GetComponent<Rigidbody>().AddForce(transform.up * StartForce, ForceMode.Impulse);
 
     }
 

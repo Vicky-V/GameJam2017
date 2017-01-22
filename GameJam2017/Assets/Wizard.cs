@@ -7,12 +7,9 @@ public class Wizard : AIController
 
     void Update()
     {
-        world.transform.position = new Vector3(transform.position.x, world.transform.position.y, transform.position.z);
+        world.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
     }
 
-    protected void FixedUpdate()
-    {
-        GetComponent<Rigidbody>().MovePosition(transform.position + transform.forward * horizontalSpeed*Time.deltaTime);
-    }
+   
 
 }
