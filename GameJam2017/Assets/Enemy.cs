@@ -36,5 +36,16 @@ public class Enemy : AIController {
         return probs[randomIndex];
     }
 
-   
+    protected override void OnCollisionEnter(Collision collision)
+    {
+        base.OnCollisionEnter(collision);
+
+        if (collision.transform.gameObject.layer == LayerMask.NameToLayer("Projectile"))
+        {
+            Destroy(gameObject);
+            Game.Instance.IncrementCreatures();
+
+        }
+    }
+
 }

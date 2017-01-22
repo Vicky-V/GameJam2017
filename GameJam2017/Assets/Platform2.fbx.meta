@@ -1,26 +1,42 @@
 fileFormatVersion: 2
-guid: 2cd511074caddf1428dea8a6b84564df
+guid: 1a0f034b6e00e534baf2b5a63b1fe9b9
 timeCreated: 1485111269
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Crate.000
-    100002: Crate.001
-    100004: Platform.000
-    100006: //RootNode
-    400000: Crate.000
-    400002: Crate.001
-    400004: Platform.000
-    400006: //RootNode
-    2300000: Crate.000
-    2300002: Crate.001
-    2300004: Platform.000
-    3300000: Crate.000
-    3300002: Crate.001
-    3300004: Platform.000
-    4300000: Crate.001
-    4300002: Platform.000
+    100000: Platform.001
+    100002: Platform.002
+    100004: Platform.003
+    100006: Platform.004
+    100008: Platform.005
+    100010: Platform.006
+    100012: //RootNode
+    400000: Platform.001
+    400002: Platform.002
+    400004: Platform.003
+    400006: Platform.004
+    400008: Platform.005
+    400010: Platform.006
+    400012: //RootNode
+    2300000: Platform.001
+    2300002: Platform.002
+    2300004: Platform.003
+    2300006: Platform.004
+    2300008: Platform.005
+    2300010: Platform.006
+    3300000: Platform.001
+    3300002: Platform.002
+    3300004: Platform.003
+    3300006: Platform.004
+    3300008: Platform.005
+    3300010: Platform.006
+    4300000: Platform.006
+    4300002: Platform.005
+    4300004: Platform.004
+    4300006: Platform.003
+    4300008: Platform.002
+    4300010: Platform.001
   materials:
     importMaterials: 1
     materialName: 0

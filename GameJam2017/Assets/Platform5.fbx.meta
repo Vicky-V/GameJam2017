@@ -1,26 +1,15 @@
 fileFormatVersion: 2
-guid: 2cd511074caddf1428dea8a6b84564df
+guid: c421beafe533d704fb4af0b13aee0c2f
 timeCreated: 1485111269
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Crate.000
-    100002: Crate.001
-    100004: Platform.000
-    100006: //RootNode
-    400000: Crate.000
-    400002: Crate.001
-    400004: Platform.000
-    400006: //RootNode
-    2300000: Crate.000
-    2300002: Crate.001
-    2300004: Platform.000
-    3300000: Crate.000
-    3300002: Crate.001
-    3300004: Platform.000
-    4300000: Crate.001
-    4300002: Platform.000
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Mball.020
   materials:
     importMaterials: 1
     materialName: 0

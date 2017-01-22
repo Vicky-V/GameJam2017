@@ -10,6 +10,10 @@ public class Wizard : AIController
         world.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
     }
 
-   
+    void OnDestroy()
+    {
+        if(Game.Instance!=null)
+            Game.Instance.GameOver();
+    }
 
 }

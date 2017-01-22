@@ -6,17 +6,24 @@ public class Player : MonoBehaviour {
     public GameObject BulletPrefab;
     public GameObject Weapon;
     public GameObject WeaponSpawnPoint;
-    public float horizontalSpeed = 20.0f;
+    public float acceleration = 5.0f;
+    public float maxSpeed = 20.0f;
     public float jumpForce = 20.0f;
     public float fireDelay;
 
     float currentFireDelay;
+    Vector3 currentVelocity;
 
     bool isJumping=false;
 
     void Start()
     {
         GetComponent<Rigidbody>().velocity = Vector3.zero;
+    }
+
+    void OnDestroy()
+    {
+        Game.Instance.GameOver();
     }
 
     void Update()
@@ -39,9 +46,10 @@ public class Player : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate()
     {
-        GetComponent<Rigidbody>().AddForce(transform.right * Input.GetAxis("Horizontal") * horizontalSpeed, ForceMode.Force);
+        if(GetComponent<Rigidbody>().velocity.sqrMagnitude < maxSpeed * maxSpeed)
+            GetComponent<Rigidbody>().AddForce(transform.forward * Input.GetAxis("Horizontal") * acceleration *(isJumping? 0.5f:1.0f), ForceMode.Impulse);
 
-        if (Input.GetButtonDown("Jump") && !isJumping)
+        if (Input.GetAxis("Vertical")>0 && !isJumping)
             Jump();
     }
 
@@ -61,5 +69,8 @@ public class Player : MonoBehaviour {
     void OnCollisionEnter(Collision collision)
     {
         isJumping = false;
+        
+        if (collision.transform.tag == "Enemy" || collision.transform.gameObject.layer !=LayerMask.NameToLayer("Hat"))
+            Destroy(gameObject);
     }
 }
