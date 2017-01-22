@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 893d3b996ef6a0346a5fb87e38afb1bd
-timeCreated: 1485034059
+guid: 1f55b20e23212c24c86492573c196aac
+timeCreated: 1485054322
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -49,11 +49,11 @@ ModelImporter:
     100082: Bone.021_end
     100084: Bone.022
     100086: Bone.022_end
-    100088: //RootNode
-    100090: Hat
-    100092: Hat Armature
-    100094: HatBase
-    100096: HatBase_end
+    100088: Hat
+    100090: Hat Armature
+    100092: HatBase
+    100094: HatBase_end
+    100096: //RootNode
     400000: Bone.001
     400002: Bone.001_end
     400004: Bone.002
@@ -99,10 +99,10 @@ ModelImporter:
     400084: Bone.022
     400086: Bone.022_end
     400088: Hat
-    400090: //RootNode
-    400092: Hat Armature
-    400094: HatBase
-    400096: HatBase_end
+    400090: Hat Armature
+    400092: HatBase
+    400094: HatBase_end
+    400096: //RootNode
     4300000: Hat
     9500000: //RootNode
     13700000: Hat

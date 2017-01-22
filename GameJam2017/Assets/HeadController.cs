@@ -3,21 +3,21 @@ using System.Collections;
 
 public class HeadController : MonoBehaviour
 {
-    public GameObject Hat;
     public GameObject Head;
-    public float verticalSensitivity = 1.0f;
+    public GameObject HatRoot;
+    public GameObject HatStaticBone;
     public Bone rootBone;
     
     void Start()
     {
         StartCoroutine(SetBonePosition());
-
+        HatRoot.transform.position = transform.position;
     }
 
     void Update()
     {
-       // transform.position += new Vector3(0, Input.GetAxis("Vertical"), 0) * verticalSensitivity;
-        Hat.transform.position = Head.transform.transform.position;
+        HatRoot.transform.position = new Vector3( transform.position.x, HatRoot.transform.position.y, transform.position.z);
+        HatStaticBone.transform.position = Head.transform.position;
     }
 
     IEnumerator SetBonePosition()
@@ -25,7 +25,9 @@ public class HeadController : MonoBehaviour
         while(true)
         {
             yield return new WaitForSeconds(0.15f);
-            rootBone.TargetWorldYPos = Hat.transform.position.y;
+
+            
+            rootBone.TargetWorldYPos = rootBone.transform.parent.InverseTransformPoint( Head.transform.position).z;
 
         }
     }

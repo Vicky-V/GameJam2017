@@ -3,7 +3,6 @@ using System.Collections;
 
 public class Wizard : AIController
 {
-
     public GameObject world;
 
     void Update()
@@ -13,7 +12,7 @@ public class Wizard : AIController
 
     protected void FixedUpdate()
     {
-        GetComponent<Rigidbody>().AddForce(Vector3.right * horizontalSpeed, ForceMode.Force);
+        GetComponent<Rigidbody>().MovePosition(transform.position + transform.forward * horizontalSpeed*Time.deltaTime);
     }
 
 }

@@ -7,7 +7,7 @@ public class Bone : MonoBehaviour
     public float TargetWorldYPos
     {
         get { return targetWorldYPos; }
-        set { targetWorldYPos = value; previousWorldYPos = transform.position.y; timePassed = 0.0f; }
+        set { targetWorldYPos = value; previousWorldYPos = transform.localPosition.z; timePassed = 0.0f; }
     }
 
     float previousWorldYPos;
@@ -17,7 +17,7 @@ public class Bone : MonoBehaviour
 
     void Start()
     {
-        TargetWorldYPos = transform.position.y;
+        TargetWorldYPos = transform.localPosition.z;
         timePassed = speed;
     }
 
@@ -26,8 +26,8 @@ public class Bone : MonoBehaviour
     {
         if (transform.GetSiblingIndex() > 0)
         {
-            transform.forward = transform.parent.GetChild(transform.GetSiblingIndex() - 1).position - transform.position;
-            transform.Rotate(-90, 0, 0);
+            transform.LookAt(transform.parent.GetChild(transform.GetSiblingIndex() - 1));
+         //   transform.Rotate(-90, 0, 0);
         }
 
         timePassed += Time.deltaTime;
@@ -36,12 +36,12 @@ public class Bone : MonoBehaviour
         {
             previousWorldYPos = targetWorldYPos;
             timePassed = speed;
-            transform.position = new Vector3(transform.position.x, targetWorldYPos, transform.position.z);
+            transform.localPosition = new Vector3(transform.localPosition.x,  transform.localPosition.y, targetWorldYPos);
         }
         else
         {
             float yPos = Mathf.Lerp(previousWorldYPos, targetWorldYPos, timePassed / speed);
-            transform.position = new Vector3(transform.position.x, yPos, transform.position.z);
+            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, yPos);
         }
         
         if ( timePassed > speed/3)
